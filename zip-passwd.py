@@ -2,9 +2,9 @@ import zipfile
 from tqdm import tqdm
 
 # the password list path you want to use, must be available in the current directory
-wordlist = "passwds.txt"
+wordlist = "passwords.txt"
 # the zip file you want to crack its password
-zip_file = "dane.zip"
+zip_file = "archive.zip"
 
 # initialize the Zip File object
 zip_file = zipfile.ZipFile(zip_file)
