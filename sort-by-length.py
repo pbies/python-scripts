@@ -3,4 +3,4 @@ import sys
 
 l = sorted(sys.stdin.readlines(), key=len)
 for i in l:
-    print(i, end='')
+	print(i, end='')
