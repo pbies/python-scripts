@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-# (C) 2021 Piotr Biesiada
 # Parse Thunderbird Inbox or Sent files consisting of many emails and put them in subfolder email per file
 
 import sys
