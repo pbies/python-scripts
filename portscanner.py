@@ -26,13 +26,17 @@ t1 = datetime.now()
 
 # We also put in some error handling for catching errors
 
+txt="Open ports: "
+
 try:
-	for port in range(1,1025):
-#	for port in tqdm(range(1,1025), total=len(range(1,1025)), unit="ports"):
+#	for port in range(1,1025):
+#		print(port)
+	for port in tqdm(range(1,1025), total=len(range(1,1025)), unit="ports"):
 		sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		sock.settimeout(0.2)
 		result = sock.connect_ex((remoteServerIP, port))
 		if result == 0:
-			print("Port {}: \t Open".format(port))
+			txt=txt+" "+str(port)
 		sock.close()
 
 except KeyboardInterrupt:
@@ -52,6 +56,8 @@ t2 = datetime.now()
 
 # Calculates the difference of time, to see how long it took to run the script
 total =  t2 - t1
+
+print(txt)
 
 # Printing the information to screen
 print('Scanning Completed in: ', total)
