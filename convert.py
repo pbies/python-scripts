@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 def bytes_to_hex(bytes):
 	return bytes.hex()
 

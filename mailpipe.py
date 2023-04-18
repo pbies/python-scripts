@@ -7,7 +7,7 @@ import io
 
 TCP_IP = '91.195.251.44'
 TCP_PORT = 24995
-BLOCK_SIZE = 1024 * 16
+BLOCK_SIZE = 1024*16
 
 try:
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
