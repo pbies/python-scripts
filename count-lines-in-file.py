@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 def _count_generator(reader):
 	b = reader(1024 * 1024)
 	while b:
@@ -22,3 +23,17 @@ def count_lines(file):
 ###
 
 cnt=sum(1 for line in open("input.txt", 'r'))
+
+###
+
+from timeit import default_timer as timer
+
+start = timer()
+cnt=sum(1 for line in open("input.txt", 'r'))
+end = timer()
+print(end - start)
+# below faster
+start = timer()
+cnt2=open("input.txt", "rb").read().count(b'\n')
+end = timer()
+print(end - start)
