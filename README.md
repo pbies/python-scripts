@@ -3,4 +3,4 @@ python-scripts
 
 	Have fun!
 
-	ptrbsd gmail
+	ptrbsd (at) gmail
