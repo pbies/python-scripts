@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# (C) 2023 Piotr Biesiada
 
 import sys
 import base64

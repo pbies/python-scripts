@@ -13,5 +13,5 @@ if __name__ == '__main__':
 	with Pool(processes=2) as p:
 		max_ = 30
 		with tqdm(total=max_) as pbar:
-		for _ in p.imap_unordered(_foo, range(0, max_)):
+		for _ in p.imap_unordered(_foo, range(0, max_), chunksize=1000):
 			pbar.update()

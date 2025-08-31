@@ -99,7 +99,7 @@ print(f'It took {end_time - start_time:0.6f} second(s) to complete.')
 #print('03', flush=True)
 #start_time = perf_counter()
 #with Pool(2) as p:
-#	r = list(tqdm.tqdm(p.imap(go, r), total=l))
+#	r = list(tqdm.tqdm(p.imap_unordered(go, r, chunksize=1000), total=l))
 #end_time = perf_counter()
 #print(f'It took {end_time - start_time:0.6f} second(s) to complete.')
 
@@ -128,7 +128,7 @@ print('06', flush=True)
 start_time = perf_counter()
 with Pool(processes=2) as p:
 	with tqdm.tqdm(total=l) as pbar:
-		for _ in p.imap_unordered(go, r):
+		for _ in p.imap_unordered(go, r, chunksize=1000):
 			pbar.update()
 end_time = perf_counter()
 print(f'It took {end_time - start_time:0.6f} second(s) to complete.')

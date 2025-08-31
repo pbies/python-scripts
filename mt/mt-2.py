@@ -11,4 +11,4 @@ def _foo(my_number):
 
 if __name__ == '__main__':
 	with Pool(2) as p:
-		r = list(tqdm.tqdm(p.imap(_foo, range(30)), total=30))
+		r = list(tqdm.tqdm(p.imap_unordered(_foo, range(30), chunksize=1000), total=30))

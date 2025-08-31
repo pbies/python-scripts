@@ -4,20 +4,16 @@ from multiprocessing import Pool
 from tqdm import tqdm
 import sys
 
-max_ = int(1e5)
+max_ = int(1e4)
 th = 8
 
 def go(i):
 	pass
 
-i=1
-
 if __name__ == "__main__":
 	with Pool(processes=th) as p, tqdm(total=max_) as pbar:
-		for result in p.imap(go, range(0, max_)):
-			if i%2000==0:
-				pbar.update(2000)
-				pbar.refresh()
-			i=i+1
+		for result in p.imap_unordered(go, range(0, max_), chunksize=1000):
+			pbar.update()
+			pbar.refresh()
 
 	print('\a', end='', file=sys.stderr)
