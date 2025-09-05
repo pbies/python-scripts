@@ -20,7 +20,7 @@ print("Odczytano:", loaded)
 import json
 
 # przykładowa zmienna
-data = {"nazwa": "Piotr", "wiek": 30, "aktywny": True}
+data = {"nazwa": "Agnes", "wiek": 30, "aktywny": True}
 
 # zapis do pliku
 with open("dane.json", "w") as f:
